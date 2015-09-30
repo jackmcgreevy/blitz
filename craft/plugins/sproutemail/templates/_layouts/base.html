@@ -1,0 +1,15 @@
+{% extends "_layouts/cp" %}
+
+{% set selectedTab = craft.request.segment(2) ? craft.request.segment(2) : 'overview' %}
+
+{% if currentUser.can('editSproutEmailSettings') and craft.request.segment(2) == "" %}
+  {% set extraPageHeaderHtml %}
+    <a class="btn settings icon" href="{{ url('sproutemail/settings') }}" title="{{ 'Settings'|t }}"></a>
+  {% endset %}
+{% endif %}
+
+{% block content %}
+{% endblock %}
+
+{% includeCssResource "sproutemail/css/sproutemail.css" %}
+{% includeJsResource "sproutemail/js/sproutemail.js" %}

@@ -1,0 +1,39 @@
+{% extends "_layouts/cp" %}
+
+{% set title  = "Settings"|t %}
+
+{% set crumbs = [
+  { label: "Sprout Email"|t, url: url('sproutemail') },
+  { label: "Settings"|t, url: url('sproutemail/settings') },
+] %}
+
+{% set selectedTab = tab is defined ? tab : 'mailers' %}
+
+{% set tabs = {
+	general: {
+		label: "Campaigns"|t,
+		url: "#settings-general"
+	},
+	notifications: {
+		label: "Notifications"|t,
+		url: "#settings-notifications"
+	},
+	mailers: {
+		label: "Mailers"|t,
+		url: "#settings-mailers"
+	},
+	cp: {
+		label: "Control Panel"|t,
+		url: "#settings-cp"
+	}
+} %}
+
+{% set content %}
+
+  {{ body }}
+
+  {% include 'sproutemail/_partials/brand/footer' %}
+
+{% endset %}
+
+{% includeCssResource "sproutemail/css/brand.css" %}

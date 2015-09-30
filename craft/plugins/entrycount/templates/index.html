@@ -32,7 +32,7 @@
 						<td>
 							{% if entry.url %}
 								<a href="{{ entry.url }}" class="go" target="_blank">
-									{% entry.uri %}
+									{{ entry.uri }}
 								</a>
 							{% endif %}	
 						</td>
@@ -55,4 +55,5 @@
 		{% else %}
 			No entries counted
 		{% endif %}	
+		
 {% endblock %}

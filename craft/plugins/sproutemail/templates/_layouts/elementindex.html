@@ -1,0 +1,20 @@
+{% extends "_layouts/elementindex" %}
+
+{% set title = craft.SproutEmail.name %}
+
+{% if currentUser.can('editSproutEmailSettings') %}
+	{% set extraPageHeaderHtml %}
+	  <a class="btn settings icon" href="{{ url('sproutemail/settings') }}" title="{{ 'Settings'|t }}"></a>
+	{% endset %}
+{% endif %}
+
+{% set tabs = {
+	email: {
+		label: "Email"|t,
+		url: cpUrl('sproutemail')
+	},
+	recipients: {
+		label: "Recipients"|t,
+		url: cpUrl('sproutemail/recipients')
+	}
+} %}
